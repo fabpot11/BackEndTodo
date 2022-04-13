@@ -6,7 +6,7 @@ const rout = express.Router();
 
 rout.post("/", authCheck, async (req, res) => {
   try {
-    res.status(201).send(req.body);
+    res.status(201).send('Done');
   } catch (e) {
     res.status(501).send(e.message);
   }
