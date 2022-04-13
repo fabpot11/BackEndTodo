@@ -11,6 +11,15 @@ rout.post("/", async (req, res) => {
   }
 });
 
+rout.get("/", async (req, res) => {
+  try {
+    const data = await Parent.find().lean().exec();
+    res.status(201).send(data);
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
+
 rout.get("/:id", async (req, res) => {
   try {
     const data = await Parent.find({ userId: req.params.id }).lean().exec();
