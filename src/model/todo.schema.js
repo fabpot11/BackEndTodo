@@ -8,6 +8,7 @@ const todoSchema = mongoose.Schema(
   },
   {
     versionKey: false,
+    timestamps: true
   }
 );
 
