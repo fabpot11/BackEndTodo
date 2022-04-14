@@ -6,7 +6,7 @@ const rout = express.Router();
 rout.post("/", async (req, res) => {
   try {
     const data = await User.create(req.body);
-    res.status(201).send(data);
+    res.status(201).send({"_id":data._id});
   } catch (e) {
     res.status(501).send(e.message);
   }
