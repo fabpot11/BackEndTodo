@@ -13,7 +13,7 @@ const authCheck = async (req,res,next) => {
     if (!password) {
       return res.status(501).send("wrong crediantials");
     }
-    res.status(201).send(user);
+    res.status(201).send(user._id);
   } catch (e) {
     res.status(400).send(e.message);
   }
